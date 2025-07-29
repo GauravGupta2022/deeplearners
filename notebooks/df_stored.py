@@ -12,3 +12,5 @@ team_df = pd.read_csv('../data/raw/Team.csv')
 
 # Cleaned data
 player_cleaned_df = pd.read_csv('../data/cleaned/player_attributes_cleaned.csv')
+player_cleaned_df.set_index(['player_api_id', 'player_name', 'birthday', 'height', 'weight', 'date'], inplace=True)
+
