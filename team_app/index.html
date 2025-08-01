@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Match Predictor</title>
+</head>
+<body>
+    <h2>Team Match Prediction</h2>
+
+    <form method="POST">
+        <label for="team_name">Team:</label>
+        <select name="team_name">
+            {% for team in team_names %}
+                <option value="{{ team }}" {% if team == team_name %}selected{% endif %}>{{ team }}</option>
+            {% endfor %}
+        </select><br><br>
+
+        <label for="start_date">Start Date:</label>
+        <input type="text" name="start_date" value="{{ start_date }}" placeholder="e.g., 2013-08-01" required><br><br>
+
+        <label for="end_date">End Date:</label>
+        <input type="text" name="end_date" value="{{ end_date }}" placeholder="e.g., 2014-05-20" required><br><br>
+
+        <button type="submit">Predict</button>
+    </form>
+
+    <div>
+        {{ result|safe }}
+    </div>
+</body>
+</html>
