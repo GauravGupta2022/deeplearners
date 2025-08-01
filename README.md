@@ -4,13 +4,16 @@ This repository is an example of strucutre for a basic data analysis.
 
 ## Project Structure
 ``` 
-project/ 
+project/
+|
 ├── data/
 │   ├── cleaned/
 │   ├── processed/
 │   └── raw/
 ├── models/
 ├── notebooks/
+├── team_app/
+│   └── templates/
 ├── results/
 │   └── figures/
 ├── .gitignore
