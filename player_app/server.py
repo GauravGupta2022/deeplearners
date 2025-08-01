@@ -16,7 +16,7 @@ feature_cols = [col for col in df.columns if col not in ['overall_rating', 'play
 sequence_length = 3
 
 model = PlayerRatingLSTM(40)
-model.load_state_dict(torch.load("player_nn_model_weights.pth"))
+model.load_state_dict(torch.load("model_weights.pth"))
 model.eval()
 
 @app.route('/')
