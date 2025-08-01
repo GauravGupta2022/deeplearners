@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>Player Rating Result</title>
+</head>
+<body>
+    <h2>Results for {{ player }}</h2>
+
+    {% if error %}
+      <p style="color:red">{{ error }}</p>
+    {% else %}
+      <img src="{{ url_for('static', filename='plot.svg') }}" alt="Plot">
+    {% endif %}
+
+    <hr>
+
+    <form action="{{ url_for('player.player_result') }}" method="POST">
+        <label for="player">Search another player:</label>
+        <input type="text" name="player" id="player" required>
+        <input type="submit" value="Search">
+    </form>
+
+    <form action="/">
+      <button type="submit">Home</button>
+    </form>
+</body>
+</html>
+

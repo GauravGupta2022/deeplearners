@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Soccer Prediction App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding-top: 50px;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        .header img {
+            height: 60px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 40px;
+        }
+        .menu-button {
+            font-size: 20px;
+            padding: 20px 40px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+        }
+        .menu-button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="{{ url_for('static', filename='logo.png') }}" alt="Team Logo">
+        <h1>Soccer Prediction</h1>
+    </div>
+
+    <div class="button-container">
+        <form action="/team">
+            <button type="submit" class="menu-button">Team Match Prediction</button>
+        </form>
+        <form action="/player">
+            <button type="submit" class="menu-button">Player Rating Prediction</button>
+        </form>
+    </div>
+</body>
+</html>
