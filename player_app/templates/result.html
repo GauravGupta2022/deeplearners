@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Player Rating Result</title>
+</head>
+<body>
+    <h2>Results for {{ player }}</h2>
+
+    {% if error %}
+      <p style="color:red">{{ error }}</p>
+    {% else %}
+      <img src="{{ url_for('static', filename='plot.svg') }}" alt="Plot">
+    {% endif %}
+
+    <hr>
+    <!-- 🔍 다시 검색하는 폼 -->
+    <form action="{{ url_for('result') }}" method="POST">
+        <label for="player">Search another player:</label>
+        <input type="text" name="player" id="player" required>
+        <input type="submit" value="Search">
+    </form>
+</body>
+</html>
